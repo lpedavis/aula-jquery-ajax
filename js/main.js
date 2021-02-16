@@ -6,6 +6,7 @@ function consultar(){
 		url: url,
 		type: "GET", 
 		success: function (response){
+			$("#titulo").html("CEP" + cep)
 		$("#logradouro").html(response.logradouro);
 		$("#bairro").html(response.bairro);
 		$("#localidade").html(response.localidade);	
