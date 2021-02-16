@@ -1,4 +1,5 @@
 function consultar(){
+	$(".barra-progresso").show()
 	let cep = document.querySelector("#cep").value
 	let url = "https://viacep.com.br/ws/"+ cep +"/json/";
 	console.log(url)
@@ -12,6 +13,9 @@ function consultar(){
 		$("#localidade").html(response.localidade);	
 		$("#uf").html(response.uf);
 		$("#ddd").html(response.ddd)
+		$(".cep").show()
+			$(".barra-progresso").hide()
+
 		//document.querySelector("#logradouro").innerHTML= response.logradouro;
 		//document.querySelector("#bairro").innerHTML= response.bairro;
 		//document.querySelector("#localidade").innerHTML= response.localidade;
@@ -24,3 +28,8 @@ function consultar(){
 		}
 	})
 }
+
+$(function(){
+	$(".cep").hide();
+	$(".barra-progresso").hide();
+})
